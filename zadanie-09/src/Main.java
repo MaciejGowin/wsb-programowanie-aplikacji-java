@@ -20,8 +20,4 @@ public class Main {
         System.out.printf("Sum of Mercedes: %s\n", CarCalculator.countBrand("Mercedes", cars));
         System.out.printf("Sum of Opel: %s\n", carCalculator.countBrand("Opel", cars));
     }
-
-    public static double eurToPln(double eur) {
-        return eur * 4.25;
-    }
 }

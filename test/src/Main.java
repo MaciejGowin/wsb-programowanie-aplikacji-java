@@ -1,12 +1,21 @@
-public class Main {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Random;
+import java.util.stream.Stream;
 
-    public static void main(String[] args) {
-        int i = 1;
-        boolean test = ("test" == new String("test"));
+class Item {
 
-        System.out.println(test);
+    public Item(String v) {
     }
 }
 
-class Car {
+public class Main {
+
+    public static void main(String[] args) {
+        int[] items = {1, 2, 3};
+
+        System.out.println("Test: " + items[9]);
+    }
 }

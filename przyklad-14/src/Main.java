@@ -13,6 +13,6 @@ public class Main {
             inputInt = input.nextInt();
         } while (inputInt != MAGIC_NUMBER);
 
-        System.out.print("Finally!");
+        System.out.println("Finally!");
     }
 }
