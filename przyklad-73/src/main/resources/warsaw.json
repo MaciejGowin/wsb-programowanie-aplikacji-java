@@ -1,0 +1,9 @@
+{
+  "name": "Warszawa",
+  "capital": true,
+  "population": 1900000,
+  "area": 456.456,
+  "country": {
+    "name":"Poland"
+  }
+}

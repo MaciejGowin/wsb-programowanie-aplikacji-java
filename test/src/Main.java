@@ -1,21 +1,23 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Random;
-import java.util.stream.Stream;
+class FirstThread extends Thread {
 
-class Item {
-
-    public Item(String v) {
+    @Override
+    public void run() {
+        while (true) {
+            System.out.println("Thread name: " + getName() + isAlive());
+        }
     }
 }
 
 public class Main {
 
-    public static void main(String[] args) {
-        int[] items = {1, 2, 3};
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("Start");
+        Thread thread1 = new FirstThread();
+        thread1.setDaemon(true);
+        thread1.start();
 
-        System.out.println("Test: " + items[9]);
+        Thread.sleep(10000);
+
+        System.out.println("Finished");
     }
 }

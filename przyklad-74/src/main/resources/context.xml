@@ -1,0 +1,17 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+    <bean id="routeReader" class="pl.wsb.programowaniejava.maciejgowin.przyklad74.service.RouteReader"/>
+    <bean id="airportReader" class="pl.wsb.programowaniejava.maciejgowin.przyklad74.service.AirportReader"/>
+
+    <bean id="routeService" class="pl.wsb.programowaniejava.maciejgowin.przyklad74.service.RouteService">
+        <constructor-arg name="routeReader" ref="routeReader" />
+        <constructor-arg name="airportReader" ref="airportReader" />
+    </bean>
+</beans>

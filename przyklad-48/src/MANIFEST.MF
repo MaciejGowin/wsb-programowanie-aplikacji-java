@@ -1,0 +1,1 @@
+pl.wsb.programowaniejava.maciejgowin.przyklad.Main-Class: LineCounter

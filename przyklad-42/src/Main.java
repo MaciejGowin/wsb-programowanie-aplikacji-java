@@ -7,9 +7,9 @@ import java.util.Optional;
 public class Main {
 
     private static final String INPUT_FILE =
-            "/Users/gowinm/dev/external-projects/wsb-programowanie-aplikacji-java/przyklad-41/src/input";
+            "/Users/gowinm/dev/external-projects/wsb-programowanie-aplikacji-java/przyklad-42/src/input";
     private static final String OUTPUT_FILE =
-            "/Users/gowinm/dev/external-projects/wsb-programowanie-aplikacji-java/przyklad-41/src/output";
+            "/Users/gowinm/dev/external-projects/wsb-programowanie-aplikacji-java/przyklad-42/src/output";
 
     public static void main(String args[]) {
         readFile(INPUT_FILE).ifPresent(content -> writeFile(OUTPUT_FILE, content + LocalDateTime.now()));

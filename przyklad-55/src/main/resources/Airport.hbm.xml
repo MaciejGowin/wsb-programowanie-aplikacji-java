@@ -1,0 +1,13 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name = "pl.wsb.programowaniejava.maciejgowin.przyklad55.Airport" table = "airports">
+        <id name = "code" type = "string" column = "code" />
+        <property name = "name" column = "name" type = "string"/>
+        <property name = "latitude" column = "latitude" type = "double"/>
+        <property name = "longitude" column = "longitude" type = "double"/>
+    </class>
+</hibernate-mapping>

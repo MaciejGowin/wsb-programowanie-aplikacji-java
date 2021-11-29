@@ -16,6 +16,7 @@ RemoteSystemsTempFiles
 **/C:
 **/.checkstyle
 **/out
+**/*.class
 
 **/hs*.log
 **/replay*.log
