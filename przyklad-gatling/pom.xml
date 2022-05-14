@@ -31,7 +31,7 @@
                 <artifactId>gatling-maven-plugin</artifactId>
                 <version>4.1.5</version>
                 <configuration>
-                    <simulationClass>foo.Bar</simulationClass>
+                    <simulationClass>pl.wsb.programowaniejava.maciejgowin.przyklad.LocateApiGatlingSimulation</simulationClass>
                 </configuration>
             </plugin>
         </plugins>
