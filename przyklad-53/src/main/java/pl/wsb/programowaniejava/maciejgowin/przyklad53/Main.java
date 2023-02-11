@@ -1,6 +1,7 @@
 package pl.wsb.programowaniejava.maciejgowin.przyklad53;
 
 import java.sql.Connection;
+import java.util.Locale;
 
 import static pl.wsb.programowaniejava.maciejgowin.przyklad53.Configuration.createSchema;
 import static pl.wsb.programowaniejava.maciejgowin.przyklad53.Configuration.getConnection;
@@ -8,6 +9,7 @@ import static pl.wsb.programowaniejava.maciejgowin.przyklad53.Configuration.getC
 public class Main {
 
     public static void main(String[] args) {
+        Locale.setDefault(Locale.ENGLISH);
         try (Connection connection = getConnection(); AirportManager airportManager = new AirportManager(connection)) {
 
             createSchema(connection);
