@@ -1,14 +1,16 @@
 package pl.wsb.programowaniejava.maciejgowin.przyklad64;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Counter {
 
-    private int i;
+    private AtomicInteger i = new AtomicInteger();
 
     public void increment() {
-        i = i + 1;
+        i.incrementAndGet();
     }
 
     public int get() {
-        return i;
+        return i.get();
     }
 }

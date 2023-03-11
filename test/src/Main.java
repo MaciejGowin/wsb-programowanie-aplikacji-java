@@ -1,3 +1,6 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 class FirstThread extends Thread {
 
     @Override
@@ -11,13 +14,7 @@ class FirstThread extends Thread {
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("Start");
-        Thread thread1 = new FirstThread();
-        thread1.setDaemon(true);
-        thread1.start();
-
-        Thread.sleep(10000);
-
-        System.out.println("Finished");
+        LocalDateTime now = LocalDateTime.now();
+        System.out.println(now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
     }
 }
