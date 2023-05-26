@@ -17,7 +17,12 @@ W pakiecie `*.simple` znajduje się kilka klas, które wymagają napisania test�
 Dopisz testy jednostkowe. Pamiętaj o wszystkich możliwościach użycia metod.
 4. Otwórz klasę `InternalCache`. Napisz testy jednostkowe dla method znajdujących się w tej klasie. Sprawdzaj czy ilość elementów w cache zgadza się z Twoimi założeniami. Pamiętaj o inicjalizacji i czyszczeniu cache przed i po każdym teście.
 
-### 3. Testy Mockito
+### 3. Testy parametryzowane w junit 5
+W pakiecie `*.parameterized` znajduje się klasa `CurrencyConversion` oraz test `CurrencyConversionParametrizedTest`.
+1. Popraw funkcję `CurrencyConversion.convert` tak, aby zaokrąglała w dół, do 2 miejsc po przecinku w następujący sposób: 1.6 -> 1, 1.5 -> 1, 1.1 -> 1, 1.0 -> 1
+2. Dodaj więcej przypadków testowych. Pamiętaj o scenariuszach negatywnych - niepoprawne dane, błędy
+
+### 4. Testy Mockito
 W pakiecie `*.mvc` znajduje się przykładowa aplikacja napisana z użyciem Spring Boot.
 1. Spójrz na `FlightService.scheduleNewFlight()`. Napisz test jednostkowy z użyciem Mockito. Sprawdź czy obiekt przekazany do metody `save` jest poprawnie skonstruowany
 2. Spójrz na `FlightService.findById()`. Napisz testy jednostkowe z użyciem Mockito. Sprawdź wszystkie możliwe scenariusze.
@@ -25,7 +30,7 @@ W pakiecie `*.mvc` znajduje się przykładowa aplikacja napisana z użyciem Spri
 4. Napisz testy do metody `AirportService.getAirportsName()`. Zamokuj odpowiedź z zewnętrznego API.
    1. Popraw możliwe błędy w kodzie jeżeli wystąpi taka potrzeba.
 
-### 4. Testy Spring
+### 5. Testy Spring
 W pakiecie `*.mvc` znajduje się przykładowa aplikacja napisana z użyciem Spring Boot.
 1. Napisz test dla `AirportController`. Zamokuj zachowanie beana RestTemplate (reszta ma pozostać bez zmian)
 2. Napisz testy do `FlightController` dla każdej akcji.
