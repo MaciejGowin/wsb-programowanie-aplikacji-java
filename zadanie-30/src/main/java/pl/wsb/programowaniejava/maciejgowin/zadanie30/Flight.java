@@ -29,4 +29,25 @@ public class Flight {
 
     @Column(name = "arrival_date_time")
     private LocalDateTime arrivalDateTime;
+
+    public Flight() {
+    }
+
+    public Flight(Airport departureAirport, Airport arrivalAirport, LocalDateTime departureDateTime, LocalDateTime arrivalDateTime) {
+        this.departureAirport = departureAirport;
+        this.arrivalAirport = arrivalAirport;
+        this.departureDateTime = departureDateTime;
+        this.arrivalDateTime = arrivalDateTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "id=" + id +
+                ", departureAirport=" + departureAirport +
+                ", arrivalAirport=" + arrivalAirport +
+                ", departureDateTime=" + departureDateTime +
+                ", arrivalDateTime=" + arrivalDateTime +
+                '}';
+    }
 }

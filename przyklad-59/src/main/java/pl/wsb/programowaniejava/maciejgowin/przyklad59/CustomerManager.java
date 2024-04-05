@@ -28,20 +28,6 @@ public class CustomerManager {
         }
     }
 
-    public List<Customer> getCustomersByIterator() {
-        try (Session session = sessionFactory.openSession()) {
-            session.beginTransaction();
-            Query<Customer> query = session.createQuery("FROM Customer", Customer.class);
-            List<Customer> customers = new ArrayList<>();
-            Iterator<Customer> iterator = query.iterate();
-            while (iterator.hasNext()) {
-                customers.add(iterator.next());
-            }
-            session.getTransaction().commit();
-            return customers;
-        }
-    }
-
     public List<Customer> getCustomersByStream() {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();

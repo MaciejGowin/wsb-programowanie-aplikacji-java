@@ -17,11 +17,10 @@ public class Main {
             customerManager.addCustomer("Jan", "Kowalski");
 
             System.out.printf("Check (1): %s%n", customerManager.getCustomers());
-            System.out.printf("Check (2): %s%n", customerManager.getCustomersByIterator());
-            System.out.printf("Check (3): %s%n", customerManager.getCustomersByStream());
+            System.out.printf("Check (2): %s%n", customerManager.getCustomersByStream());
 
-            System.out.printf("Check (4): %s%n", customerManager.getCustomersByFirstName("Maciej"));
-            System.out.printf("Check (5): %s%n", customerManager.getCustomersByFirstNameNamed("Maciej"));
+            System.out.printf("Check (3): %s%n", customerManager.getCustomersByFirstName("Maciej"));
+            System.out.printf("Check (4): %s%n", customerManager.getCustomersByFirstNameNamed("Maciej"));
 
         } catch(Exception e) {
             System.out.printf("Failed: %s%n", e.getMessage());

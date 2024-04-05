@@ -25,4 +25,23 @@ public class Customer {
 
     @Column(name = "date_of_birth")
     private LocalDate dateOfBirth;
+
+    public Customer() {
+    }
+
+    public Customer(String firstName, String lastName, LocalDate dateOfBirth) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                '}';
+    }
 }

@@ -26,4 +26,23 @@ public class Booking {
 
     @Column(name = "price")
     private BigDecimal price;
+
+    public Booking() {
+    }
+
+    public Booking(Customer customer, Flight flight, BigDecimal price) {
+        this.customer = customer;
+        this.flight = flight;
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "id=" + id +
+                ", customer=" + customer +
+                ", flight=" + flight +
+                ", price=" + price +
+                '}';
+    }
 }
