@@ -21,3 +21,5 @@ RemoteSystemsTempFiles
 **/hs*.log
 **/replay*.log
 
+*.db
+

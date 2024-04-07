@@ -25,11 +25,14 @@ public class Main {
         String title = driver.getTitle();
         if (title == null || !title.contains("Official Ryanair")) {
             LOGGER.warn("FAILED: wrong website title");
+        } else {
+            LOGGER.info("SUCCESS: correct website title");
         }
 
         try {
-            WebElement policyAgreeButton = driver.findElement(By.className("cookie-popup-with-overlay__button"));
+            WebElement policyAgreeButton = driver.findElement(By.className("cookie-popup-with-overlay__button-settings"));
             policyAgreeButton.click();
+            LOGGER.info("SUCCESS: clicked policy agree button");
         } catch (Exception ex) {
             LOGGER.warn("FAILED: unable to locate policy agree button");
         }
@@ -38,7 +41,9 @@ public class Main {
             WebElement ourPartnersHeader = driver.findElement(By.className("partners-cards-list__header"));
             String ourPartners = ourPartnersHeader.getText();
             if (ourPartners == null || !ourPartners.contains("Our Partners Other")) {
-                LOGGER.warn("FAILED: wrong our partners text");
+                LOGGER.warn("FAILED: wrong our partners text: {}", ourPartners);
+            } else {
+                LOGGER.info("SUCCESS: correct our partners text");
             }
         } catch (Exception ex) {
             LOGGER.warn("FAILED: unable to locate our partners header");
