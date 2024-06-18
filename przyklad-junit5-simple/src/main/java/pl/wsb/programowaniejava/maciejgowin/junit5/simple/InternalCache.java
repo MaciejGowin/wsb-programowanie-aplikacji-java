@@ -1,4 +1,4 @@
-package pl.wsb.programowaniejava.maciejgowin.przyklad.simple;
+package pl.wsb.programowaniejava.maciejgowin.junit5.simple;
 
 import java.util.HashMap;
 import java.util.Map;

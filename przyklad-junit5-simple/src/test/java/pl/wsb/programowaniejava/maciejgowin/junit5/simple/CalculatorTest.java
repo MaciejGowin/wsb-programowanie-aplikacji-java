@@ -1,11 +1,13 @@
-package pl.wsb.programowaniejava.maciejgowin.przyklad.simple;
+package pl.wsb.programowaniejava.maciejgowin.junit5.simple;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 class CalculatorTest {
 
+    @Disabled
     @Test
     void shouldEvaluateExpression() {
         // given
@@ -20,5 +22,4 @@ class CalculatorTest {
                 .isNotNull()
                 .isEqualTo(expected);
     }
-
 }

@@ -1,4 +1,4 @@
-package pl.wsb.programowaniejava.maciejgowin.przyklad.parametrized;
+package pl.wsb.programowaniejava.maciejgowin;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -10,6 +10,7 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CurrencyConversionParametrizedTest {
+
     private static Stream<Arguments> shouldCalculatePriceInGivenCurrency() {
         return Stream.of(
                 Arguments.of(BigDecimal.valueOf(10), "USD", BigDecimal.valueOf(45.123)),
@@ -18,10 +19,9 @@ public class CurrencyConversionParametrizedTest {
 
     @ParameterizedTest
     @MethodSource
-    void shouldCalculatePriceInGivenCurrency(
-            BigDecimal priceInPLN, String currencyCode, BigDecimal expected) {
+    void shouldCalculatePriceInGivenCurrency(BigDecimal priceInPln, String currencyCode, BigDecimal expected) {
 
-        BigDecimal actual = CurrencyConversion.convert(priceInPLN, currencyCode);
+        BigDecimal actual = CurrencyConversion.convert(priceInPln, currencyCode);
         assertThat(actual.doubleValue()).isEqualTo(expected.doubleValue());
     }
 }
