@@ -3,7 +3,6 @@ package pl.wsb.programowaniejava.maciejgowin.przyklad;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pl.wsb.programowaniejava.maciejgowin.przyklad.BankAccount;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

@@ -14,7 +14,7 @@ public class LocateApiGatlingSimulation extends Simulation {
 
     HttpProtocolBuilder httpProtocol = http
             // The root for all relative URLs
-            .baseUrl("https://www.ryanair.com/api/locate")
+            .baseUrl("https://www.ryanair.com/api/views/locate")
             // Common headers
             .acceptHeader("application/json;q=0.9,*/*;q=0.8")
             .acceptEncodingHeader("gzip, deflate")
@@ -22,34 +22,34 @@ public class LocateApiGatlingSimulation extends Simulation {
 
     ScenarioBuilder scn = scenario("Location searches") // A scenario is a chain of requests and pauses
             .exec(http("request_1")
-                    .get("/v5/airports"))
+                    .get("/5/airports/en/active"))
             .pause(1)
             .exec(http("request_2")
-                    .get("/v5/airports/WRO"))
+                    .get("/5/airports/en/WRO"))
             .pause(2)
             .exec(http("request_3")
-                    .get("/v5/airports/DUB"))
+                    .get("/5/airports/en/DUB"))
             .pause(Duration.ofMillis(1500))
             .exec(http("request_4")
-                    .get("/v5/airports"))
+                    .get("/5/airports/en/active"))
             .pause(Duration.ofMillis(890))
             .exec(http("request_5")
-                    .get("/v5/airports?language=pl"))
+                    .get("/5/airports/pl/active"))
             .pause(Duration.ofMillis(670))
             .exec(http("request_6")
-                    .get("/v5/routes"))
+                    .get("/3/routes"))
             .pause(Duration.ofMillis(629))
             .exec(http("request_7")
-                    .get("/v5/routes?departureAirportCode=WRO"))
+                    .get("/3/routes/WRO"))
             .pause(Duration.ofMillis(734))
             .exec(http("request_8")
-                    .get("/v5/routes?departureAirportCode=DUB"))
+                    .get("/3/routes/DUB"))
             .pause(1)
             .exec(http("request_9")
-                    .get("/v5/routes?departureMacCode=LON"))
+                    .get("/3/routes/STN"))
             .pause(0)
             .exec(http("request_10")
-                    .get("/v5/routes"));
+                    .get("/3/routes"));
 
     {
         setUp(scn.injectOpen(atOnceUsers(1)).protocols(httpProtocol));
