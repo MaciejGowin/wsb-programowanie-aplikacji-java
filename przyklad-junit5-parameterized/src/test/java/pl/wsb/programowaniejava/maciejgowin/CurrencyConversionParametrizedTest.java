@@ -19,9 +19,8 @@ public class CurrencyConversionParametrizedTest {
 
     @ParameterizedTest
     @MethodSource
-    void shouldCalculatePriceInGivenCurrency(BigDecimal priceInPln, String currencyCode, BigDecimal expected) {
-
-        BigDecimal actual = CurrencyConversion.convert(priceInPln, currencyCode);
+    void shouldCalculatePriceInGivenCurrency(BigDecimal value, String currencyCode, BigDecimal expected) {
+        BigDecimal actual = CurrencyConversion.convertToPln(value, currencyCode);
         assertThat(actual.doubleValue()).isEqualTo(expected.doubleValue());
     }
 }
