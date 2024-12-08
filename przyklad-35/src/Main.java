@@ -22,7 +22,7 @@ class SampleClass {
 
     @Override
     public String toString() {
-        return String.format("{privateField: %s, privateField: %s}", privateField, publicField);
+        return String.format("{privateField: %s, publicField: %s}", privateField, publicField);
     }
 }
 
