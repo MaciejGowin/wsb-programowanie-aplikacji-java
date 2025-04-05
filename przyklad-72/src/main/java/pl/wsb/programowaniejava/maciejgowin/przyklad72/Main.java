@@ -13,5 +13,15 @@ public class Main {
         LOGGER.warn("Minor update");
         LOGGER.error("Severe update");
         LOGGER.info("Application: end");
+
+        try {
+            throwException();
+        } catch (Exception e) {
+            LOGGER.warn("Exception occurred: {}", e.getMessage());
+        }
+    }
+
+    public static void throwException() throws Exception {
+        throw new Exception("Something went wrong");
     }
 }
