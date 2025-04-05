@@ -1,4 +1,4 @@
-package pl.wsb.programowaniejava.maciejgowin.przyklad73.util;
+package pl.coderbrother.javadev.jacksonprice.util;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;

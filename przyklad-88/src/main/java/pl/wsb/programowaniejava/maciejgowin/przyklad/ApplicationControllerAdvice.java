@@ -2,7 +2,9 @@ package pl.wsb.programowaniejava.maciejgowin.przyklad;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -34,8 +36,9 @@ public class ApplicationControllerAdvice extends ResponseEntityExceptionHandler 
         return ErrorDto.builder().message("Something went wrong").build();
     }
 
+    @Nullable
     @Override
-    protected ResponseEntity<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    protected ResponseEntity<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException ex, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
         super.handleHttpRequestMethodNotSupported(ex, headers, status, request);
         return new ResponseEntity<>(ErrorDto.builder().message("Method not allowed").build(), HttpStatus.METHOD_NOT_ALLOWED);
     }
