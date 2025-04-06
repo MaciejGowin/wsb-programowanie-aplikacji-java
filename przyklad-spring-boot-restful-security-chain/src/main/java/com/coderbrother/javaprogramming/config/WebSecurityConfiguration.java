@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.logout.LogoutFilter;
@@ -20,20 +22,14 @@ public class WebSecurityConfiguration {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-
-        http.csrf()
-                .disable();
-
-        http.addFilterBefore(jwtAuthenticationFilter(), LogoutFilter.class);
-
         http
-                .authorizeRequests()
-                .antMatchers("/**/accountLogin").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .logout()
-                .permitAll();
+                .sessionManagement(config -> config.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .csrf(AbstractHttpConfigurer::disable)
+                .addFilterBefore(jwtAuthenticationFilter(), LogoutFilter.class)
+                .authorizeHttpRequests(config -> config
+                                .requestMatchers("/**/accountLogin").permitAll()
+                                .anyRequest().authenticated())
+                .logout(LogoutConfigurer::permitAll);
         return http.build();
     }
 

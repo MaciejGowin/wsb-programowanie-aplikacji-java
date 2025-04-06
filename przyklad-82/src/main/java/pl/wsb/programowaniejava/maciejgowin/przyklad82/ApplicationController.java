@@ -26,4 +26,9 @@ public class ApplicationController {
         modelAndView.addObject("url", request.getRequestURI());
         return modelAndView;
     }
+
+    @RequestMapping("/simple")
+    public String simple() {
+        return "simple";
+    }
 }

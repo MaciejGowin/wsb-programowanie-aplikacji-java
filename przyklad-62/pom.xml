@@ -41,7 +41,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>pl.wsb.programowaniejava.maciejgowin.przyklad62.pl.wsb.programowaniejava.maciejgowin.przyklad.Main</mainClass>
+                            <mainClass>pl.wsb.programowaniejava.maciejgowin.przyklad62.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

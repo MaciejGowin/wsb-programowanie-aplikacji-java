@@ -1,5 +1,6 @@
 package pl.wsb.programowaniejava.maciejgowin.przyklad;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +17,6 @@ import pl.wsb.programowaniejava.maciejgowin.przyklad.model.CustomerDto;
 import pl.wsb.programowaniejava.maciejgowin.przyklad.service.AirportService;
 import pl.wsb.programowaniejava.maciejgowin.przyklad.service.CustomerService;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 

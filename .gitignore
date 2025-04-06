@@ -22,4 +22,4 @@ RemoteSystemsTempFiles
 **/replay*.log
 
 *.db
-
+*.out

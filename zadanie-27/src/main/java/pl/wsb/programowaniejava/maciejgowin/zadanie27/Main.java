@@ -10,7 +10,6 @@ public class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("Zadanie 27");
 
-                                                              // jdbc:mysql://localhost:3306/booking_system
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/booking_system", "root", "root");
 
         BookManager bookManager = new BookManager(connection);

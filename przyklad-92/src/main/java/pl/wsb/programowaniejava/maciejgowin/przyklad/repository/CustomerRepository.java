@@ -1,11 +1,11 @@
 package pl.wsb.programowaniejava.maciejgowin.przyklad.repository;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 import pl.wsb.programowaniejava.maciejgowin.przyklad.model.Customer;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
