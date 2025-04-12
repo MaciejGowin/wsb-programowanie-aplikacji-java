@@ -10,16 +10,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
-
 
     <dependencies>
         <dependency>
             <groupId>io.gatling.highcharts</groupId>
             <artifactId>gatling-charts-highcharts</artifactId>
-            <version>3.7.6</version>
+            <version>3.13.5</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -29,7 +28,7 @@
             <plugin>
                 <groupId>io.gatling</groupId>
                 <artifactId>gatling-maven-plugin</artifactId>
-                <version>4.1.5</version>
+                <version>4.16.3</version>
                 <configuration>
                     <simulationClass>pl.wsb.programowaniejava.maciejgowin.przyklad.LocateApiGatlingSimulation</simulationClass>
                 </configuration>
