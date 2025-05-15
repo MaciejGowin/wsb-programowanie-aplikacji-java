@@ -1,16 +1,16 @@
 package pl.wsb.programowaniejava.maciejgowin.przyklad.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.wsb.programowaniejava.maciejgowin.przyklad.model.RyanairApiCountryDto;
 
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class AirportService {
 
-    @Autowired
-    private RyanairApiService ryanairApiService;
+    private final RyanairApiService ryanairApiService;
 
     public Optional<String> getDefaultAirportCode(String countryCode) {
         return ryanairApiService.getCountries()

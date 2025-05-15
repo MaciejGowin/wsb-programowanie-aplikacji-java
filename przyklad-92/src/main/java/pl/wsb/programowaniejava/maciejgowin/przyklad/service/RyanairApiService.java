@@ -1,8 +1,8 @@
 package pl.wsb.programowaniejava.maciejgowin.przyklad.service;
 
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -14,6 +14,7 @@ import java.util.List;
 
 import static java.util.Optional.ofNullable;
 
+@RequiredArgsConstructor
 @Service
 public class RyanairApiService {
 
@@ -22,8 +23,7 @@ public class RyanairApiService {
     @Value("${ryanairApi.countries.endpoint}")
     private String ryanairApiCountriesEndpoint;
 
-    @Autowired
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
     public List<RyanairApiCountryDto> getCountries() {
         try {

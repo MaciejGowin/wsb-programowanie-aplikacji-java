@@ -1,21 +1,19 @@
 package pl.wsb.programowaniejava.maciejgowin.przyklad.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pl.wsb.programowaniejava.maciejgowin.przyklad.model.Customer;
 import pl.wsb.programowaniejava.maciejgowin.przyklad.repository.CustomerCrudRepository;
 
 import java.time.LocalDate;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
+@RequiredArgsConstructor
 @Service
 public class CustomerService {
 
-    @Autowired
-    private CustomerCrudRepository customerCrudRepository;
+    private final CustomerCrudRepository customerCrudRepository;
 
     public Customer addCustomer(String firstName, String lastName, LocalDate dateOfBirth, String countryCode) {
         Customer customer = Customer.builder()

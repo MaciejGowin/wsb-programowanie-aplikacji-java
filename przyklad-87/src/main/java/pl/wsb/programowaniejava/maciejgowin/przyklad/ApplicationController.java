@@ -1,6 +1,6 @@
 package pl.wsb.programowaniejava.maciejgowin.przyklad;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,11 +19,11 @@ import pl.wsb.programowaniejava.maciejgowin.przyklad.service.CustomerService;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@RequiredArgsConstructor
 @RestController
 public class ApplicationController {
 
-    @Autowired
-    private CustomerService customerService;
+    private final CustomerService customerService;
 
     @GetMapping("/customers")
     public List<CustomerDto> getCustomers(@RequestParam(value = "sortBy", required = false) String sortBy) {

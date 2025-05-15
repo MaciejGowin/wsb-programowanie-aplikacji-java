@@ -1,6 +1,6 @@
 package pl.wsb.programowaniejava.maciejgowin.przyklad.actuator;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
@@ -8,11 +8,11 @@ import pl.wsb.programowaniejava.maciejgowin.przyklad.service.RyanairApiService;
 
 import static java.util.Optional.ofNullable;
 
+@RequiredArgsConstructor
 @Component
 public class RyanairApiHealthIndicator implements HealthIndicator {
 
-    @Autowired
-    private RyanairApiService ryanairApiService;
+    private final RyanairApiService ryanairApiService;
 
     @Override
     public Health health() {
