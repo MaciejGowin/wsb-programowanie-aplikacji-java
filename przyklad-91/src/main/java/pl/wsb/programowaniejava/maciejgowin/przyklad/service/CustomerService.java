@@ -61,7 +61,7 @@ public class CustomerService {
     }
 
     public int nextId() {
-        // Find next id by getting highest existing and incrementing
+        // Find next id by getting the highest existing and incrementing
         int maxId = customers.stream().mapToInt(Customer::getId).max().orElse(0);
         return maxId + 1;
     }
