@@ -27,7 +27,7 @@ public class WebSecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .addFilterBefore(jwtAuthenticationFilter(), LogoutFilter.class)
                 .authorizeHttpRequests(config -> config
-                                .requestMatchers("/**/accountLogin").permitAll()
+                                .requestMatchers("/accountLogin").permitAll()
                                 .anyRequest().authenticated())
                 .logout(LogoutConfigurer::permitAll);
         return http.build();
