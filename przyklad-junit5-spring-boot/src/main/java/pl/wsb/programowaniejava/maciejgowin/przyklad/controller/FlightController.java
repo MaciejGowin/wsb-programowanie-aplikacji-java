@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("flights")
+@RequestMapping("/flights")
 @RequiredArgsConstructor
 public class FlightController {
 
@@ -28,12 +28,12 @@ public class FlightController {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("{flightId}")
+    @GetMapping("/{flightId}")
     public FlightDto findFlightById(@PathVariable("flightId") long flightId) {
         return asDto(flightService.findById(flightId));
     }
 
-    @PostMapping("{airlineCode}/{flightNumber}")
+    @PostMapping("/{airlineCode}/{flightNumber}")
     public FlightDto scheduleNewFlight(@PathVariable("airlineCode") String airlineCode,
                                        @PathVariable("flightNumber") int flightNumber,
                                     @RequestParam(required = false, name = "noOfAdults") Integer noOfAdults,

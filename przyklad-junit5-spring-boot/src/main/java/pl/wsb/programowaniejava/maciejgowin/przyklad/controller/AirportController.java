@@ -9,13 +9,13 @@ import pl.wsb.programowaniejava.maciejgowin.przyklad.dto.AirportNameDto;
 import pl.wsb.programowaniejava.maciejgowin.przyklad.service.AirportService;
 
 @RestController
-@RequestMapping("airports")
+@RequestMapping("/airports")
 @RequiredArgsConstructor
 public class AirportController {
 
     private final AirportService airportService;
 
-    @GetMapping("{iataCode}/name")
+    @GetMapping("/{iataCode}/name")
     public AirportNameDto getFullNameFromIataCode(@PathVariable("iataCode") String iataCode) {
         return AirportNameDto.builder()
                 .name(airportService.getAirportsName(iataCode))
