@@ -49,5 +49,6 @@ public class BookServiceTest {
         verify(bookRepository, times(1)).save(argumentCaptor.capture());
         Book book = argumentCaptor.getValue();
         assertThat(book).isNotNull();
+        assertThat(book.getTitle()).isEqualTo("Dummy Title");
     }
 }

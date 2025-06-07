@@ -1,4 +1,4 @@
-package pl.wsb.programowaniejava.maciejgowin.przyklad;
+package pl.wsb.programowaniejava.maciejgowin.gatling;
 
 import java.time.Duration;
 
@@ -14,7 +14,8 @@ public class LocateApiGatlingSimulation extends Simulation {
 
     HttpProtocolBuilder httpProtocol = http
             // The root for all relative URLs
-            .baseUrl("https://www.ryanair.com/api/views/locate")
+            //.baseUrl("https://www.ryanair.com/api/views/locate")
+            .baseUrl("http://localhost:8080")
             // Common headers
             .acceptHeader("application/json;q=0.9,*/*;q=0.8")
             .acceptEncodingHeader("gzip, deflate")
