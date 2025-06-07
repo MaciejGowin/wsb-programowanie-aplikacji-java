@@ -8,7 +8,10 @@
 
 <h1>Homepage</h1>
 
-<div><a href="${pageContext.request.contextPath}/profile">My profile</a></div>
+<div>
+    <a href="${pageContext.request.contextPath}/">Homepage</a>
+    <a href="${pageContext.request.contextPath}/profile">My profile</a>
+</div>
 
 </body>
 </html>

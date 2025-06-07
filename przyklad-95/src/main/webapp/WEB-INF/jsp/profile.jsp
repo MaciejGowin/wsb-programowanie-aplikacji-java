@@ -8,6 +8,11 @@
 
 <h1>Profile</h1>
 
+<div>
+    <a href="${pageContext.request.contextPath}/">Homepage</a>
+    <a href="${pageContext.request.contextPath}/profile">My profile</a>
+</div>
+
 <div><b>${username}:</b> ${authorities}</div>
 
 <form action="/logout" method="POST">
